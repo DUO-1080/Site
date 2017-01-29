@@ -25,7 +25,7 @@ SECRET_KEY = '^+!kfkwggf#y-f4tc!ywjdi$k4wk(f6ajod8+a_f3w=!)7zn@p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['DUO1080.pythonanywhere.com','localhost']
 
 
 # Application definition
@@ -119,5 +119,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
