@@ -1,31 +1,36 @@
+{% extends 'Blog/base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+{% block link %}
+<link rel="stylesheet" href="{% static 'Blog/css/detail.css' %}">
+{% endblock %}
 
+{% block title %}
+	{{ artical.title }}
+{% endblock %}
 
-<link rel="stylesheet" href="{% static 'Blog/mono.css' %}">
-  <title>{{ artical.title }}</title>
-</head>
-<body>
-	
-	<div class="container">
-		<div class="">
-			<h2 class="text-center"> {{ artical.title }} </h2>
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-8">
+			<h1>{{ artical.title }}</h1>
 			<hr>
-			{{ artical.body |safe }}
+			<div class="row">
+				
+					<div class="col-xs-12 col-md-3 small"><i class="fa fa-eye"></i>Views: {{ artical.views }} </div>
+					<div class="col-xs-12 col-md-3 col-md-offset-6 small text-right"><i class="fa fa-calendar-minus-o"></i> {{ artical.create_time }} </div>
+				
+			</div>
+			{{ artical.body | safe }}
+			<br><br><br>
+
+			{% include 'Blog/comment.html' %}
 		</div>
 
+		<div class="col-xs-12 col-md-4">
+			{% include 'Blog/category.html' %}
+		</div>
 	</div>
+</div>
 
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
-<script >hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
+{% endblock %}
