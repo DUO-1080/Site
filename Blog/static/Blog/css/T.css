@@ -1,0 +1,30 @@
+.box{
+	margin-top: 3em;
+	border-radius: 10px;
+	box-shadow: 0 0 5 5 #ccc;
+	box-shadow: 0 0 3px 3px #eee, 0 0 3px 3px #ccc inset;
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+.box:hover{
+	box-shadow:  0 0 3px 3px #fff, 0 0 4px 4px #ccc inset ;
+}
+a{
+	transition: all 1s linear;
+    color: #000;
+}
+a:hover{
+	text-decoration: none;
+    color: #555;
+}
+.Read{
+	background-color: #eee;
+	border-radius: 2em;
+	transition: all 0.8s ease;
+}
+.Read:hover{
+	background-color: #bbb;
+}
+.well{
+	margin-top: 3em;
+}

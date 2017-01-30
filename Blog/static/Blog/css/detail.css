@@ -1,0 +1,28 @@
+.box{
+	margin-top: 2em;
+	margin-bottom: 1.5em;
+	border-radius: 10px;
+	box-shadow: 0 0 3px 3px #eee, 0 0 3px 3px #ccc inset;
+	padding: 1em;
+}
+.nickname{
+
+}
+.size-control{
+
+	width:100%;
+	overflow-y:visible;
+	resize: none;
+	padding: 1em;
+}
+.well{
+	margin-top: 3em;
+}
+a{
+	transition: all 1s linear;
+    color: #000;
+}
+a:hover{
+	text-decoration: none;
+    color: #555;
+}
