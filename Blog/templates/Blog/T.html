@@ -26,39 +26,23 @@ Blog
                                     <div class="col-xs-12 col-md-8 col-md-offset-2">{{ artical.body | truncatewords:30 |safe  }}</div>
                                 </div>
                                 <br>
-                                <div class="row text-center">
-                                    <div class="col-xs-3">
+                                <div class="row">
+                                    <div class="col-xs-6">
                                         <i class="fa fa-eye"></i>Views: {{ artical.views }} 
                                     </div>
                                     <a href="{% url 'Blog:detail' artical.id %}">
-                                        <div class="col-xs-2 col-xs-offset-6 Read">
+                                        <div class="col-xs-6 text-right">
                                             <span class=""> Read more <i class="fa fa-paper-plane"></i> </span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                         
-                </div>    
-                {% endfor %}
+                
+                {% endfor %}</div>  
                 <div>{% include 'Blog/pagination.html' %}</div>
 
-                <div>
-                    {% if is_paginated %}
-        <div class="pagination">
-            <span class="page-links">
-                {% if page_obj.has_previous %}
-                    <a href="/cars?page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
-                <span class="page-current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                </span>
-                {% if page_obj.has_next %}
-                    <a href="/cars?page={{ page_obj.next_page_number }}">next</a>
-                {% endif %}
-            </span>
-        </div>
-    {% endif %}
-                </div>
+
 
             </div>
 

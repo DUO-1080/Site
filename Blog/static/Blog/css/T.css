@@ -17,14 +17,7 @@ a:hover{
 	text-decoration: none;
     color: #555;
 }
-.Read{
-	background-color: #eee;
-	border-radius: 2em;
-	transition: all 0.8s ease;
-}
-.Read:hover{
-	background-color: #bbb;
-}
+
 .well{
 	margin-top: 3em;
 }
