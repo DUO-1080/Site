@@ -17,29 +17,31 @@ Blog
                 {% paginate artical_list 3 %}
                 {% for artical in artical_list %}
                 <div class=" box">
-                    <a href="{% url 'Blog:detail' artical.id %}">
-                        
-                            <div class="well-sm">
-                                <h2 class="text-center">{{ artical.title }} </h2>
-                    </a>            <hr>
+                    <a href="{% url 'Blog:detail' artical.id %}"> <div class="well-sm">
+                                <h2 class="text-center">{{ artical.title }} </h2></div></a>
+                                
+                    <hr>
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-8 col-md-offset-2">{{ artical.body | truncatewords:30 |safe  }}</div>
+                                    <div class="col-xs-12 col-md-8 col-md-offset-2">{{ artical.body | truncatechars:181 |safe  }}</div>
                                 </div>
+
                                 <br>
+
                                 <div class="row">
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-6 gly">
                                         <i class="fa fa-eye"></i>Views: {{ artical.views }} 
                                     </div>
                                     <a href="{% url 'Blog:detail' artical.id %}">
-                                        <div class="col-xs-6 text-right">
+                                        <div class="col-xs-6 text-right gly">
                                             <span class=""> Read more <i class="fa fa-paper-plane"></i> </span>
                                         </div>
                                     </a>
                                 </div>
-                            </div>
+                            
                         
-                
-                {% endfor %}</div>  
+                </div> 
+                {% endfor %}
+
                 <div>{% include 'Blog/pagination.html' %}</div>
 
 

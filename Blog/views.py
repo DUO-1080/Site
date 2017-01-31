@@ -4,7 +4,7 @@ from .forms import CommentForm
 import mistune
 from django.views.generic.list import ListView
 from django.views.generic import DetailView
-
+import markdown2
 
 
 
@@ -20,7 +20,7 @@ class IndexView(ListView):
     def get_queryset(self):
         artical_list = Artical.objects.filter(status = 'P')
         for artical in artical_list:
-            artical.body = mistune.markdown(artical.body, extras=['fenced-code-blocks'])
+            artical.body = markdown2.markdown(artical.body, extras=['fenced-code-blocks'])
 
         return artical_list
 
@@ -40,7 +40,7 @@ class ArticalDetail(DetailView):
         obj = super(ArticalDetail, self).get_object()
         obj.views += 1
         obj.save()
-        obj.body = mistune.markdown(obj.body,extras=['fenced-code-blocks'])
+        obj.body = markdown2.markdown(obj.body,extras=['fenced-code-blocks'])
         return obj
 
     def get_context_data(self, **kwargs):
@@ -56,7 +56,7 @@ class TagView(ListView):
     def get_queryset(self):
         artical_list = Artical.objects.filter(tags = self.kwargs['tag_id'], status = 'P')
         for artical in artical_list:
-            artical.body = mistune.markdown(artical.body,extras=['fenced-code-blocks'],)
+            artical.body = markdown2.markdown(artical.body,extras=['fenced-code-blocks'],)
         return artical_list
 
     def get_context_data(self, **kwargs):
