@@ -22,18 +22,18 @@ Blog
                                 
                     <hr>
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-8 col-md-offset-2">{{ artical.body | truncatechars:181 |safe  }}</div>
+                                    <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">{{ artical.body | truncatechars:181 |safe  }}</div>
                                 </div>
 
                                 <br>
 
                                 <div class="row">
-                                    <div class="col-xs-6 gly">
+                                    <div class="col-xs-6 gly-left">
                                         <i class="fa fa-eye"></i>Views: {{ artical.views }} 
                                     </div>
                                     <a href="{% url 'Blog:detail' artical.id %}">
-                                        <div class="col-xs-6 text-right gly">
-                                            <span class=""> Read more <i class="fa fa-paper-plane"></i> </span>
+                                        <div class="col-xs-6 text-right">
+                                            <span class=" gly-right "> Read More <i class="fa fa-paper-plane"></i> </span>
                                         </div>
                                     </a>
                                 </div>
