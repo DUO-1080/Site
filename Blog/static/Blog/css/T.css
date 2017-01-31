@@ -9,13 +9,16 @@
 .box:hover{
 	box-shadow:  0 0 3px 3px #fff, 0 0 4px 4px #ccc inset ;
 }
-a{
+.tags{
 	transition: all 1s linear;
     color: #000;
 }
+.tags:hover{
+	text-decoration: none;
+    color: #666;
+}
 a:hover{
 	text-decoration: none;
-    color: #555;
 }
 
 .well{

@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <table class="table table-striped">
                 {% for tag in tag_list %}
-                <tr><td><i class="fa fa-tag"></i><a href="{% url 'Blog:tag' tag.pk %}">{{ tag.name }}</a></td></tr>
+                <tr><td><i class="fa fa-tag"></i><a class="tags" href="{% url 'Blog:tag' tag.pk %}">{{ tag.name }}</a></td></tr>
                 {% endfor %}
             </table>
         </div>

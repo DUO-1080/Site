@@ -18,11 +18,11 @@
 .well{
 	margin-top: 3em;
 }
-a{
+.tags{
 	transition: all 1s linear;
     color: #000;
 }
-a:hover{
+.tags:hover{
 	text-decoration: none;
-    color: #555;
+    color: #666;
 }
